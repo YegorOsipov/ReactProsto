@@ -1,0 +1,18 @@
+.App {
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+ul li {
+  list-style-type: georgian;
+  font-size: 20px;
+  color: blue;
+}
+
+ol li {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  color: firebrick;
+}

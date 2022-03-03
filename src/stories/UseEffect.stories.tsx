@@ -12,7 +12,7 @@ export const SimpleExample = () => {
     useEffect(() => {
         console.log("UseEffect every render");
         document.title = count.toString();
-    }, );
+    },);
 
     useEffect(() => {
         console.log("UseEffect only first render(componentDidMount)");
@@ -54,21 +54,31 @@ export const SetTimeOutExample = () => {
 }
 
 export const ClockBasicExample = () => {
-    let [hours, setHours] = useState(0);
-    let [minutes, setMinutes] = useState(0);
-    let [seconds, setSeconds] = useState(0);
-    console.log("ClockBasicExample");
+    // let clock = new Date().toLocaleString();
+    const date = new Date();
+    let [dateTime, setDateTime] = useState({
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        seconds: date.getSeconds(),
+    });
 
     useEffect(() => {
-        let clock = new Date();
-        hours = clock.getHours();
-        minutes = clock.getMinutes();
-        seconds = clock.getSeconds();
+        const timer = setInterval(() => {
+            const date = new Date();
+            setDateTime({
+                hours: date.getHours(),
+                minutes: date.getMinutes(),
+                seconds: date.getSeconds(),
+            });
+            return () => clearInterval(timer);
+        }, 1000);
     }, []);
 
     return (
         <div>
-            {setHours(hours)} : {setMinutes(minutes)} : {setSeconds(seconds)}
+            {dateTime.hours} : {dateTime.minutes} : {String(dateTime.seconds).length < 2 ?
+            0 + String(dateTime.seconds) :
+            dateTime.seconds}
             {/*<button onClick={() => setFake(fake + 1)}>fake+</button>*/}
             {/*<button onClick={() => setCount(count + 1)}>count+</button>*/}
         </div>

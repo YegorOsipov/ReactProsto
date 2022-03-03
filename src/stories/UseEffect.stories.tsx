@@ -74,11 +74,13 @@ export const ClockBasicExample = () => {
         }, 1000);
     }, []);
 
+    const addZero = (num: number) => {
+        return String(num).length < 2 ? 0 + String(num) : num;
+    }
     return (
         <div>
-            {dateTime.hours} : {dateTime.minutes} : {String(dateTime.seconds).length < 2 ?
-            0 + String(dateTime.seconds) :
-            dateTime.seconds}
+            {addZero(dateTime.hours)} : {addZero(dateTime.minutes)} : {addZero(dateTime.seconds)}
+
             {/*<button onClick={() => setFake(fake + 1)}>fake+</button>*/}
             {/*<button onClick={() => setCount(count + 1)}>count+</button>*/}
         </div>

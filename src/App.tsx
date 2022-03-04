@@ -13,6 +13,7 @@ import {UncontrolledInput} from "./components/Inpit/UncontrolledInput";
 import {Select} from "./components/Select/Select";
 import {Example} from "./components/ExampleMemo/Example";
 import Clock from "./components/Clock/Clock";
+import AnalogClock from "./components/Clock/AnalogClock";
 
 export type InputValue = {
     id: string
@@ -47,18 +48,19 @@ function App() {
 
     return (
         <div className='App'>
-            <PageTitle title={'This is APP component'}/>
-            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
-            <UncontrolledAccordion titleValue={'Menu'} />
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating/>
-            <UncontrolledOnOff/>
-            <OnOff onClick={setOn} on={on}/>
-            <UncontrolledInput/>
-            <Input inputValues={inputValues} addItem={addValue} changeStatus={changeStatus}/>
-            <Select selectNames={selectNames}/>
-            <Example/>
-            <Clock/>
+            {/*<PageTitle title={'This is APP component'}/>*/}
+            {/*<Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>*/}
+            {/*<UncontrolledAccordion titleValue={'Menu'} />*/}
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledOnOff/>*/}
+            {/*<OnOff onClick={setOn} on={on}/>*/}
+            {/*<UncontrolledInput/>*/}
+            {/*<Input inputValues={inputValues} addItem={addValue} changeStatus={changeStatus}/>*/}
+            {/*<Select selectNames={selectNames}/>*/}
+            {/*<Example/>*/}
+            {/*<Clock/>*/}
+            <AnalogClock/>
         </div>
     );
 }

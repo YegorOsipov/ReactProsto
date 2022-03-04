@@ -6,9 +6,8 @@ export const Clock = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setDate(new Date());
+            return () => clearInterval(timer);
         }, 1000);
-
-        return () => clearInterval(timer);
     }, []);
 
     const addZero = (num: number) => num < 10 ? "0" + num : num;

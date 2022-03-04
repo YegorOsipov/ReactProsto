@@ -54,7 +54,6 @@ export const SetTimeOutExample = () => {
 }
 
 export const ClockBasicExample = () => {
-    // let clock = new Date().toLocaleString();
     const date = new Date();
     let [dateTime, setDateTime] = useState({
         hours: date.getHours(),

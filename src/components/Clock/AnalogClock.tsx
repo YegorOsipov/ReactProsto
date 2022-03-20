@@ -3,7 +3,6 @@ import styles from "./AnalogClock.module.css"
 
 export const AnalogClock = () => {
     const [date, setDate] = useState(new Date());
-    const [analog, setAnalog] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -13,15 +12,8 @@ export const AnalogClock = () => {
         return () => clearInterval(timer);
     }, []);
 
-    const addZero = (num: number) => num < 10 ? "0" + num : num;
-
-
     return (
-
-        analog ?
-
             <div>
-                <button onClick={() => {setAnalog(!analog)}}>dynamic clock</button>
                 <div className={styles.clock}>
                     <div className={styles.hour_hand} style={{transform: `rotateZ(${date.getHours() * 30}deg)`}}></div>
                     <div className={styles.min_hand} style={{transform: `rotateZ(${date.getMinutes() * 6}deg)`}}></div>
@@ -40,23 +32,6 @@ export const AnalogClock = () => {
                     <span className={styles.ten}>10</span>
                     <span className={styles.eleven}>11</span>
                 </div>
-            </div> :
-            <div>
-                <button onClick={() => {setAnalog(!analog)}}>analog clock</button>
-                <div className={styles.dynamic_clock}>
-                <span>
-                    {addZero(date.getHours())} :
-                </span>
-                    <span>
-                    {addZero(date.getMinutes())} :
-                </span>
-                    <span>
-                    {addZero(date.getSeconds())}
-                </span>
-                </div>
             </div>
-
     );
 };
-
-export default AnalogClock;

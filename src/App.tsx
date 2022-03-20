@@ -12,8 +12,7 @@ import {Input} from "./components/Inpit/Input";
 import {UncontrolledInput} from "./components/Inpit/UncontrolledInput";
 import {Select} from "./components/Select/Select";
 import {Example} from "./components/ExampleMemo/Example";
-import Clock from "./components/Clock/Clock";
-import AnalogClock from "./components/Clock/AnalogClock";
+import {Clock} from "./components/Clock/Clock";
 
 export type InputValue = {
     id: string
@@ -60,7 +59,7 @@ function App() {
             {/*<Select selectNames={selectNames}/>*/}
             {/*<Example/>*/}
             {/*<Clock/>*/}
-            <AnalogClock/>
+            <Clock/>
         </div>
     );
 }

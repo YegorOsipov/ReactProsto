@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import styles from "./DigitalClock.module.css"
 
-export const Clock = () => {
+export const DigitalClock = () => {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -13,10 +14,16 @@ export const Clock = () => {
     const addZero = (num: number) => num < 10 ? "0" + num : num;
 
     return (
-        <div>
-            {addZero(date.getHours())} : {addZero(date.getMinutes())} : {addZero(date.getSeconds())}
+        <div className={styles.dynamic_clock}>
+            <span>
+                    {addZero(date.getHours())} :
+                </span>
+            <span>
+                    {addZero(date.getMinutes())} :
+                </span>
+            <span>
+                    {addZero(date.getSeconds())}
+                </span>
         </div>
     );
 };
-
-export default Clock;

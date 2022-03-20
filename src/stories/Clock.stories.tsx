@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
-import { AnalogClock } from './AnalogClock';
-import {DigitalClock} from "./DigitalClock";
+import React, {useState} from "react";
+import {DigitalClock} from "../components/Clock/DigitalClock";
+import {AnalogClock} from "../components/Clock/AnalogClock";
 
-export const Clock = () => {
+export default {
+    title: "Clock Demo",
+}
+
+export const ClockExample = () => {
     const [analog, setAnalog] = useState(false);
 
     return (
@@ -13,4 +17,3 @@ export const Clock = () => {
         </div>
     );
 };
-

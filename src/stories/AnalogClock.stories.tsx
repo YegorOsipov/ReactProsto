@@ -27,9 +27,9 @@ export const AnalogClockExample = () => {
             <div>
                 <button onClick={() => {setAnalog(!analog)}}>dynamic clock</button>
                 <div className={styles.clock}>
-                    <div className={styles.hour_hand} style={{transform: `rotateZ(${date.getHours() * 30}deg)`}}></div>
-                    <div className={styles.min_hand} style={{transform: `rotateZ(${date.getMinutes() * 6}deg)`}}></div>
-                    <div className={styles.sec_hand} style={{transform: `rotateZ(${date.getSeconds() * 6}deg)`}}></div>
+                    <div className={styles.hour_hand} style={{transform: `rotateZ(${date.getHours() * 30}deg)`}}> </div>
+                    <div className={styles.min_hand} style={{transform: `rotateZ(${date.getMinutes() * 6}deg)`}}> </div>
+                    <div className={styles.sec_hand} style={{transform: `rotateZ(${date.getSeconds() * 6}deg)`}}> </div>
 
                     <span className={styles.twelve}>12</span>
                     <span className={styles.one}>1</span>
@@ -45,6 +45,7 @@ export const AnalogClockExample = () => {
                     <span className={styles.eleven}>11</span>
                 </div>
             </div> :
+
             <div>
                 <button onClick={() => {setAnalog(!analog)}}>analog clock</button>
                 <div className={styles.dynamic_clock}>
